@@ -65,7 +65,7 @@ const NavContainer = styled.nav`
       font-size: 2rem;
     }
   }
-  .nav-links {
+  .nav-links, .user-btn-wrapper {
     display: none;
   }
   
