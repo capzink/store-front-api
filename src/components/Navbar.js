@@ -68,9 +68,7 @@ const NavContainer = styled.nav`
   .nav-links {
     display: none;
   }
-  .user-btn-wrapper {
-    display: none;
-  }
+  
   @media (min-width: 992px) {
     .nav-toggle {
       display: none;

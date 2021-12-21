@@ -1,77 +1,107 @@
 import React from "react";
-import styled from "styled-components";
 import logo from "../assets/logo.svg";
-import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
+import { links } from "../utils/constants";
+import styled from "styled-components";
+import UserButton from "./UserButton";
 
+const Sidebar = () => {
+  const isOpen =true
+  return (
+    <SidebarContainer>
+      <aside className={`${isOpen? 'sidebar show-sidebar': 'show-sidebar'}`}>
+        <div className="sidebar-header">
+          <img src={logo} alt='Home Shopping' className="logo" />
+          <button className="close-btn" type='button'>
+            <FaTimes/>
+          </button>
+        </div>
+        <ul className="links">
+          {links.map(({id,text,url})=>{
+            return (
+              <li key={id}>
+                <Link to={url}>{text}</Link>
+              </li>
+            )
+          })}
+        </ul>
+        <UserButton/>
+      </aside>
 
-const Nav = () => {
-  return <h4>navbar</h4>;
+    
+
+    </SidebarContainer>
+  )
 };
 
-const NavContainer = styled.nav`
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .nav-center {
-    width: 90vw;
-    margin: 0 auto;
-    max-width: var(--max-width);
-  }
-  .nav-header {
+const SidebarContainer = styled.div`
+  text-align: center;
+  .sidebar-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    img {
-      width: 175px;
-      margin-left: -15px;
-    }
+    align-items: center;
+    padding: 1rem 1.5rem;
   }
-  .nav-toggle {
+  .close-btn {
+    font-size: 2rem;
     background: transparent;
-    border: transparent;
+    border-color: transparent;
     color: var(--clr-primary-5);
+    transition: var(--transition);
     cursor: pointer;
-    svg {
-      font-size: 2rem;
-    }
+    color: var(--clr-red-dark);
+    margin-top: 0.2rem;
   }
-  .nav-links {
-    display: none;
+  .close-btn:hover {
+    color: var(--clr-red-light);
   }
-  .cart-btn-wrapper {
-    display: none;
+  .logo {
+    justify-self: center;
+    height: 100px;
   }
-  @media (min-width: 992px) {
-    .nav-toggle {
+  .links {
+    margin-bottom: 2rem;
+  }
+  .links a {
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+    text-transform: capitalize;
+    padding: 1rem 1.5rem;
+    color: var(--clr-grey-3);
+    transition: var(--transition);
+    letter-spacing: var(--spacing);
+  }
+  .links a:hover {
+    padding: 1rem 1.5rem;
+    padding-left: 2rem;
+    background: var(--clr-grey-10);
+    color: var(--clr-grey-2);
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr-white);
+    transition: var(--transition);
+    transform: translate(-100%);
+    z-index: -1;
+  }
+  .show-sidebar {
+    transform: translate(0);
+    z-index: 999;
+  }
+  .user-btn-wrapper {
+    margin: 1.5rem;
+  }
+  @media screen and (min-width: 992px) {
+    .sidebar {
       display: none;
-    }
-    .nav-center {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-    }
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      li {
-        margin: 0 0.5rem;
-      }
-      a {
-        color: var(--clr-grey-3);
-        font-size: 1rem;
-        text-transform: capitalize;
-        letter-spacing: var(--spacing);
-        padding: 0.5rem;
-        &:hover {
-          border-bottom: 2px solid var(--clr-primary-7);
-        }
-      }
-    }
-    .cart-btn-wrapper {
-      display: grid;
     }
   }
 `;
 
-export default Nav;
+export default Sidebar;
