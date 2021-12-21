@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from '../App';
+import Home from "./HomePage"
+import Products from "./ProductsPage";
+import SingleProduct from "./SingleProductPage";
+import About from "./AboutPage";
+import Error from "./ErrorPage";
 
 
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-
+export {
+    Home,
+    Products,
+    SingleProduct,
+    About,
+    Error
+}
