@@ -1,18 +1,13 @@
-import react from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Navbar, Sidebar, Footer } from './components'
+import {Home, Products,SingleProduct,About,Error} from './pages'
 
-import styled from "styled-components";
-import {
-    Home,
-    Products,
-    SingleProduct,
-    About,
-    Error
-} from './pages'
-
-function App () {
+function App() {
   return (
     <Router>
+      <Navbar />
+      <Sidebar />
       <Switch>
         <Route exact path="/">
           <Home />
@@ -20,19 +15,17 @@ function App () {
         <Route exact path="/about">
           <About />
         </Route>
-        <Route exact path="/products">
+        <Route exact path="products">
           <Products />
+          <Route exact path="/products/:id" children={<SingleProduct />} />
         </Route>
-        <Route exact path="/products/:id" children={<SingleProduct/>}/>
-        <Route path="*">
-          <Error/>
+        <Route exact path="*">
+          <Error />
         </Route>
       </Switch>
+      <Footer/>
     </Router>
   );
 }
-
-
-
 
 export default App

@@ -1,34 +1,21 @@
-import React from "react";
-import styled from "styled-components";
-import logo from "../assets/logo.svg";
-import { FaBars } from "react-icons/fa";
-import { Link } from "react-router-dom";
-//import { links } from "../utils/constants";
-//import { useProductsContext } from "../context/products_context";
-//import { useUserContext } from "../context/user_context";
+import React from 'react'
+import styled from 'styled-components'
+import logo from '../assets/logo.svg'
+import { FaBars } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+
+
 
 const Nav = () => {
-  return (
-     <NavContainer>
-         <div className="nav-center">
-             <div className="nav-header">
-                 <Link to="/">
-                     <img src={logo} alt="The Home Shopping" />
-                 </Link>
-             </div>
-         </div>
-     </NavContainer>
-
-
-
-  )
-};
+  return <h4>navbar</h4>
+}
 
 const NavContainer = styled.nav`
   height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+
   .nav-center {
     width: 90vw;
     margin: 0 auto;
@@ -88,6 +75,6 @@ const NavContainer = styled.nav`
       display: grid;
     }
   }
-`;
+`
 
-export default Nav;
+export default Nav
