@@ -1,5 +1,6 @@
 import react from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+
 import styled from "styled-components";
 import {
     Home,
@@ -11,8 +12,24 @@ import {
 
 function App () {
   return (
-    <div>hello</div>
-  )
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+        <Route exact path="/products">
+          <Products />
+        </Route>
+        <Route exact path="/products/:id" children={<SingleProduct/>}/>
+        <Route path="*">
+          <Error/>
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
 
