@@ -10,7 +10,7 @@ const Sidebar = () => {
   const isOpen =true
   return (
     <SidebarContainer>
-      <aside className={`${isOpen? 'sidebar show-sidebar': 'show-sidebar'}`}>
+      <aside className={`${isOpen? 'sidebar show-sidebar': 'sidebar'}`}>
         <div className="sidebar-header">
           <img src={logo} alt='Home Shopping' className="logo" />
           <button className="close-btn" type='button'>
@@ -28,9 +28,6 @@ const Sidebar = () => {
         </ul>
         <UserButton/>
       </aside>
-
-    
-
     </SidebarContainer>
   )
 };
