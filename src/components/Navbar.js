@@ -7,7 +7,20 @@ import { Link } from 'react-router-dom'
 
 
 const Nav = () => {
-  return <h4>navbar</h4>
+  return (
+    <NavContainer>
+      <div className="nav-center">
+        <div className="nav-header">
+          <Link>
+          <img src={logo} alt='home shopping' />
+          </Link>
+          <button type="button" className="nav-toggle">
+            <FaBars />
+          </button>
+        </div>
+      </div>
+    </NavContainer>
+  );
 }
 
 const NavContainer = styled.nav`
