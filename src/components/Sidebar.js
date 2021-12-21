@@ -7,7 +7,7 @@ import styled from "styled-components";
 import UserButton from "./UserButton";
 
 const Sidebar = () => {
-  const isOpen =true
+  const isOpen =false
   return (
     <SidebarContainer>
       <aside className={`${isOpen? 'sidebar show-sidebar': 'sidebar'}`}>
