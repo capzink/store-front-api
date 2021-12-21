@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { PageHero } from "../components";
 import aboutImg from "../assets/about.jpeg";
 
 const AboutPage = () => {
   return (
     <>
-      <PageHero />
       <Wrapper className="page section section-center">
         <img src={aboutImg} alt="about image" />
         <article>
