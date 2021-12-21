@@ -55,7 +55,7 @@ const SidebarContainer = styled.div`
     color: var(--clr-primary-5);
     transition: var(--transition);
     cursor: pointer;
-    color: var(--clr-red-dark);
+    color: var(--clr-primary-5);
     margin-top: 0.2rem;
   }
   .close-btn:hover {
