@@ -29,7 +29,6 @@ const fetchProducts =async(url) =>{
   try {
     const resp = await axios.get(url);
     const products =resp.data
-    console.log(products);
     dispatch({type:'GET_PRODUCTS_SUCCESS', payload:products})
    
   } catch (error) {
