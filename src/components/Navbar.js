@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import logo from '../assets/logo.svg'
 import { FaBars } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { links } from "../utils/constants";
+import UserButton from "./UserButton";
 
 
 
@@ -11,13 +13,24 @@ const Nav = () => {
     <NavContainer>
       <div className="nav-center">
         <div className="nav-header">
-          <Link>
+          <Link to='/'>
           <img src={logo} alt='home shopping' />
-          </Link>
+          </Link >
           <button type="button" className="nav-toggle">
             <FaBars />
           </button>
         </div>
+        <ul className='nav-links'>
+          {links.map((link)=>{
+            const{id, text, url}= link
+            return (
+              <li key={id}>
+                <Link to={url}>{text}</Link>
+              </li>
+            )
+          })}
+        </ul>
+        <UserButton/>
       </div>
     </NavContainer>
   );
@@ -55,7 +68,7 @@ const NavContainer = styled.nav`
   .nav-links {
     display: none;
   }
-  .cart-btn-wrapper {
+  .user-btn-wrapper {
     display: none;
   }
   @media (min-width: 992px) {
@@ -84,10 +97,9 @@ const NavContainer = styled.nav`
         }
       }
     }
-    .cart-btn-wrapper {
+    .user-btn-wrapper {
       display: grid;
     }
   }
 `
-
 export default Nav
