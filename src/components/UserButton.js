@@ -2,11 +2,13 @@ import React from "react";
 import {FaUserMinus, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-//import { useProductsContext } from "../context/products_context";
+import { useProductsContext } from "../utils/products-context";
 //import { useCartContext } from "../context/cart_context";
 //import { useUserContext } from "../context/user_context";
 
 const UserButton = () => {
+  const { closeSidebar } = useProductsContext();
+
   return (
       <Wrapper className="user-btn-wrapper">
           <button type='button' className="auth-btn">Login<FaUserPlus/>

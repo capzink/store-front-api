@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/products-reducer";
-import { products_url as url } from "../utils/constants";
+//import { products_url as url } from "../utils/constants";
 
 
 const initialState = {
@@ -21,8 +21,10 @@ const closeSidebar = () => {
 };
 
 
+
+
   return (
-    <ProductsContext.Provider value={{...state, openSidebar, closeSidebar}}>
+    <ProductsContext.Provider value={{ ...state, openSidebar, closeSidebar }}>
       {children}
     </ProductsContext.Provider>
   );

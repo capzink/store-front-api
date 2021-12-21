@@ -1,35 +1,43 @@
 import React from "react";
 import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
+import { useProductsContext } from "../utils/products-context";
 import { FaTimes } from "react-icons/fa";
 import { links } from "../utils/constants";
 import styled from "styled-components";
 import UserButton from "./UserButton";
 
 const Sidebar = () => {
-  const isOpen =false
+  const { isSidebarOpen, closeSidebar } = useProductsContext();
+  
+ 
+ 
   return (
     <SidebarContainer>
-      <aside className={`${isOpen? 'sidebar show-sidebar': 'sidebar'}`}>
+      <aside
+        className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}
+      >
         <div className="sidebar-header">
-          <img src={logo} alt='Home Shopping' className="logo" />
-          <button className="close-btn" type='button'>
-            <FaTimes/>
+          <img src={logo} alt="Home Shopping" className="logo" />
+          <button className="close-btn" type="button" onClick={closeSidebar}>
+            <FaTimes />
           </button>
         </div>
         <ul className="links">
-          {links.map(({id,text,url})=>{
+          {links.map(({ id, text, url }) => {
             return (
               <li key={id}>
-                <Link to={url}>{text}</Link>
+                <Link to={url} onClick={closeSidebar}>
+                  {text}
+                </Link>
               </li>
-            )
+            );
           })}
         </ul>
-        <UserButton/>
+        <UserButton />
       </aside>
     </SidebarContainer>
-  )
+  );
 };
 
 const SidebarContainer = styled.div`
