@@ -3,7 +3,6 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import Sidebar from './Sidebar'
 import Mainhome from './Mainhome'
-import Loading from './Loading'
 import Error from './Error'
 import ProductImages from './ProductImages'
 import Filters from './Filters'
@@ -18,7 +17,6 @@ export {
   Footer,
   Sidebar,
   Mainhome,
-  Loading,
   Error,
   ProductImages,
   Filters,
