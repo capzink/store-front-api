@@ -28,13 +28,10 @@ const Product = ({image, title, price, id}) => {
   );
 };
 const Wrapper = styled.article`
-  margin-top: 100px;
-
-
+  margin-top: 5.5rem;
+  margin-bottom:4.5rem;
   .featured {
-    margin-bottom: 5rem;
     display: grid;
-    gap: 2.5rem;
     img {
       height: 220px;
       width: 100%;
@@ -45,6 +42,7 @@ const Wrapper = styled.article`
   }
   }
   footer {
+    margin-top:2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,14 +61,14 @@ const Wrapper = styled.article`
   }
   footer p {
     color: var(--clr-primary-5);
-    letter-spacing: var(--spacing);
-    flex-shrink: 0;
+    
   }
 button:disabled,
 button[disabled]{
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
+  cursor:none;
 }
 `;
 export default Product;

@@ -11,7 +11,6 @@ const ProductImages = ({product}) => {
 };
 
 const Wrapper = styled.section`
-
   @media (max-width: 576px) {
     .main {
       height: 300px;

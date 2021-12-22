@@ -74,13 +74,14 @@ const Wrapper = styled.section`
 
   .btn-reset {
     padding: 3px;
-    background: var(--clr-primary-5);
+    background: transparent;
     letter-spacing: var(--spacing);
     display: inline-block;
-    font-weight: 400;
-    font-size: 0.2rem;
+    font-weight: 300;
     cursor: pointer;
     border-radius: var(--radius);
+    border: transparent;
+    color:var(--clr-grey-4)
   }
 `;
 export default Countdown;
