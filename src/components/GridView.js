@@ -5,7 +5,7 @@ import Product from "./Product";
 const GridView = ({products}) => {
     console.log(products);
   return(
-      <Wrapper>
+      <Wrapper className="">
           <div className="products-container">
               {products.map(product=>{
                   return <Product key={product.id}{...product}/>
@@ -21,6 +21,7 @@ const Wrapper = styled.section`
     height: 175px;
   }
   .products-container {
+    margin-bottom:100px;
     display: grid;
     gap: 2rem 1.5rem;
   }
@@ -31,7 +32,7 @@ const Wrapper = styled.section`
   }
   @media (min-width: 1170px) {
     .products-container {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 `;

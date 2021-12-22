@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 
 const Product = ({image, title, price, id}) => {
   return (
-    <Wrapper>
+    <Wrapper >
       <div className="container">
         <img src={image} alt={title} />
         <Link to={`/products/${id}`} className="link">
-        <FaSearch/>
+          <FaSearch />
         </Link>
       </div>
       <footer>
-          <h5>{title}</h5>
-          <p>${price}</p>
+        <h5>{title}</h5>
+        <p>${price}</p>
       </footer>
     </Wrapper>
   );
@@ -22,15 +22,17 @@ const Product = ({image, title, price, id}) => {
 };
 
 const Wrapper = styled.article`
+    margin-top: 100px;
+   
   .container {
     position: relative;
-    background: var(--clr-black);
+    background: transparent;
     border-radius: var(--radius);
   }
   img {
     width: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: var(--radius);
     transition: var(--transition);
   }
@@ -61,7 +63,7 @@ const Wrapper = styled.article`
     opacity: 1;
   }
   footer {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;

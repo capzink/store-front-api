@@ -5,7 +5,7 @@ const ProductImages = ({product}) => {
     const {image} = product
   return (
     <Wrapper>
-        <img src={image} alt="" className="main"/>
+        <img src={image} alt="main" className="main"/>
     </Wrapper>
   )
 };

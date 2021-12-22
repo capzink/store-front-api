@@ -5,7 +5,7 @@ import ListView from "./ListView";
 
 const ProductList = () => {
 
-  const { products_error: error, products } =
+  const { products } =
     useProductsContext();
     console.log(products)
 
