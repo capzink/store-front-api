@@ -25,7 +25,8 @@ const AboutPage = () => {
 };
 
 const Wrapper = styled.section`
-  display: grid;
+  min-height:93.98vh;
+    display: grid;
   gap: 4rem;
   img {
     width: 100%;

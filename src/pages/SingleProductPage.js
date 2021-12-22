@@ -54,6 +54,7 @@ const SingleProductPage = () => {
 
 
 const Wrapper = styled.main`
+min-height:93.98vh;
   
   .product-center {
     display: grid;

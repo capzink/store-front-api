@@ -6,6 +6,8 @@ import Mainhome from './Mainhome'
 import Error from './Error'
 import ProductImages from './ProductImages'
 import ProductList from './ProductList'
+import Counter from "./Counter";
+
 export {
   FeaturedProducts,
   Navbar,
@@ -15,5 +17,6 @@ export {
   Error,
   ProductImages,
   ProductList,
+  Counter,
 
 }
