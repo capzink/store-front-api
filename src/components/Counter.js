@@ -6,12 +6,11 @@ const STATUS = {
   STOPPED: "Stopped",
 };
 
-
-const  Countdown =() => {
+const  Countdown =({status, setStatus}) => {
   const [secondsRemaining, setSecondsRemaining] = useState(
     Math.floor(Math.random() * 300)
   );
-  const [status, setStatus] = useState(STATUS.STARTED);
+  
 
   const secondsToDisplay = secondsRemaining % 60;
   const minutesRemaining = (secondsRemaining - secondsToDisplay) / 60;
@@ -70,9 +69,8 @@ const twoDigits = (num) => String(num).padStart(2, "0");
 
 const Wrapper = styled.section`
 display: flex;
-justify-content: space-between;
-margin-bottom:5px;
+justify-content: space-around;
+margin-bottom:25px;
 
-`
-
+`;
 export default Countdown;

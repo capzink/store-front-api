@@ -1,13 +1,18 @@
-import React from "react";
+import React, {useState}from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Counter from './Counter'
 
+
 const Product = ({image, title, price, id}) => {
+
+   const [status, setStatus] = useState("Started");
+   
+
   return (
     <Wrapper>
       <span>
-        <Counter />
+        <Counter status={status} setStatus={setStatus} />
       </span>
       <div className="featured ">
         <img src={image} alt={title} />
@@ -16,7 +21,7 @@ const Product = ({image, title, price, id}) => {
         <h5>{title}</h5>
         <p>${price} USD</p>
         <Link to={`/products/${id}`}>
-          <button className="btn-p">More Details</button>
+          <button disabled={status==="Stopped"} className="btn-p">More Details</button>
         </Link>
       </footer>
     </Wrapper>
@@ -24,6 +29,7 @@ const Product = ({image, title, price, id}) => {
 };
 const Wrapper = styled.article`
   margin-top: 100px;
+
 
   .featured {
     margin-bottom: 5rem;
