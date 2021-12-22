@@ -1,30 +1,26 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const ProductImages = () => {
-  return <h4>product images</h4>;
+const ProductImages = ({product}) => {
+    const {image} = product
+  return (
+    <Wrapper>
+        <img src={image} alt="" className="main"/>
+    </Wrapper>
+  )
 };
 
 const Wrapper = styled.section`
   .main {
-    height: 600px;
+    height: 300px;
   }
   img {
     width: 100%;
     display: block;
     border-radius: var(--radius);
-    object-fit: cover;
+    object-fit: contain;
   }
-  .gallery {
-    margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 1rem;
-    img {
-      height: 100px;
-      cursor: pointer;
-    }
-  }
+
   .active {
     box-shadow: 0px 0px 0px 2px var(--clr-primary-5);
   }

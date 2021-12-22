@@ -5,7 +5,6 @@ import { products_url as url } from "../utils/constants";
 import {
   Error,
   ProductImages,
-  Stars,
 } from "../components";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -36,26 +35,26 @@ const SingleProductPage = () => {
   return (
     <Wrapper>
       <div className="section section-center page">
-        <Link to='/products' className="btn">
-          Back to products
-        </Link>
         <div className="product-center">
-          <ProductImages/>
+          <ProductImages product={product} />
           <section className="content">
             <h2>{title}</h2>
-            <Stars/>
-            <h5 className="price">${price}</h5>
+            <h5 className="price">Price: ${price}</h5>
             <p className="description">{description}</p>
             <p className="info">Product Id: {product_id}</p>
+            <Link to="/products" className="btn">
+              Back to products
+            </Link>
           </section>
         </div>
       </div>
     </Wrapper>
-  )
+  );
 };
 
 
 const Wrapper = styled.main`
+  
   .product-center {
     display: grid;
     gap: 4rem;
@@ -86,6 +85,49 @@ const Wrapper = styled.main`
       font-size: 1.25rem;
     }
   }
+    .main {
+    height: 600px;
+  }
+  img {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+    object-fit: cover;
+  }
+  .gallery {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 1rem;
+    img {
+      height: 100px;
+      cursor: pointer;
+    }
+  }
+  .active {
+    box-shadow: 0px 0px 0px 2px var(--clr-primary-5);
+  }
+  @media (max-width: 576px) {
+    .main {
+      height: 300px;
+    }
+    .gallery {
+      img {
+        height: 50px;
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    .main {
+      height: 500px;
+    }
+    .gallery {
+      img {
+        height: 75px;
+      }
+    }
+  }
+
 `;
 
 export default SingleProductPage;

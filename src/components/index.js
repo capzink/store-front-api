@@ -8,7 +8,6 @@ import ProductImages from './ProductImages'
 import Filters from './Filters'
 import ProductList from './ProductList'
 import Sort from './Sort'
-import Stars from './Stars'
 import CartContent from './CarContent'
 import StripeCheckout from './StripeCheckout'
 export {
@@ -22,7 +21,6 @@ export {
   Filters,
   ProductList,
   Sort,
-  Stars,
   CartContent,
   StripeCheckout,
 }
