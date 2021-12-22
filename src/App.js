@@ -15,15 +15,16 @@ function App() {
         <Route exact path="/about">
           <About />
         </Route>
-        <Route exact path="products">
+        <Route exact path="/products">
           <Products />
-          <Route exact path="/products/:id" children={<SingleProduct />} />
         </Route>
+        <Route path="/products/:id" children={<SingleProduct />} />
+
         <Route exact path="*">
           <Error />
         </Route>
       </Switch>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }

@@ -1,12 +1,11 @@
 import React from "react";
 import { useProductsContext } from "../utils/products-context";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Error from "./Error";
 import Product from "./Product";
 
 const FeaturedProducts = () => {
-    const {products_loading: loading, products_error:error,featured_products:featured} = useProductsContext()
+    const {products_error:error,featured_products:featured} = useProductsContext()
     if(error){
         return <Error/>
     }

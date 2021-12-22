@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import about from "../assets/about.jpeg";
-import storeworker1 from "../assets/store-worker-1.jpg";
 import storeworker2 from "../assets/store-worker-2.jpg";
 
 
