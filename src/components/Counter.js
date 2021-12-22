@@ -1,27 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
 
 const STATUS = {
   STARTED: "Started",
   STOPPED: "Stopped",
 };
 
-const INITIAL_COUNT = Math.floor(Math.random() * 300);
 
-export default function CountdownApp() {
-  const [secondsRemaining, setSecondsRemaining] = useState(INITIAL_COUNT);
-  const [status, setStatus] = useState(STATUS.STOPPED);
+const  Countdown =() => {
+  const [secondsRemaining, setSecondsRemaining] = useState(
+    Math.floor(Math.random() * 300)
+  );
+  const [status, setStatus] = useState(STATUS.STARTED);
 
   const secondsToDisplay = secondsRemaining % 60;
   const minutesRemaining = (secondsRemaining - secondsToDisplay) / 60;
   const minutesToDisplay = minutesRemaining % 60;
   const hoursToDisplay = (minutesRemaining - minutesToDisplay) / 60;
 
-  const handleStart = () => {
-    setStatus(STATUS.STARTED);
-  };
-  const handleStop = () => {
-    setStatus(STATUS.STOPPED);
-  };
   const handleReset = () => {
     setStatus(STATUS.STARTED);
     setSecondsRemaining(Math.floor(Math.random() * 300));
@@ -35,35 +31,34 @@ export default function CountdownApp() {
       }
     },
     status === STATUS.STARTED ? 1000 : null
-    // passing null stops the interval
   );
   return (
-    <div className="App">
+    <Wrapper>
+      <span>
+        {twoDigits(hoursToDisplay)}:{twoDigits(minutesToDisplay)}:
+        {twoDigits(secondsToDisplay)}
+      </span>
       <button onClick={handleReset} type="button">
         Reset
       </button>
-      <div style={{ padding: 20 }}>
-        {twoDigits(hoursToDisplay)}:{twoDigits(minutesToDisplay)}:
-        {twoDigits(secondsToDisplay)}
-      </div>
-      <div>Status: {status}</div>
-    </div>
+
+      {/*<div>Status: {status}</div>*/}
+    </Wrapper>
   );
 }
 
-// source: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 function useInterval(callback, delay) {
-  const savedCallback = useRef();
+  const savedInterval = useRef();
 
-  // Remember the latest callback.
+
   useEffect(() => {
-    savedCallback.current = callback;
+    savedInterval.current = callback;
   }, [callback]);
 
   // Set up the interval.
   useEffect(() => {
     function tick() {
-      savedCallback.current();
+      savedInterval.current();
     }
     if (delay !== null) {
       let id = setInterval(tick, delay);
@@ -71,6 +66,13 @@ function useInterval(callback, delay) {
     }
   }, [delay]);
 }
-
-// https://stackoverflow.com/a/2998874/1673761
 const twoDigits = (num) => String(num).padStart(2, "0");
+
+const Wrapper = styled.section`
+display: flex;
+justify-content: space-between;
+margin-bottom:5px;
+
+`
+
+export default Countdown;

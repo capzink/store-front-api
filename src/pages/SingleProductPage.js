@@ -52,7 +52,6 @@ const SingleProductPage = () => {
   );
 };
 
-
 const Wrapper = styled.main`
 min-height:93.98vh;
   
@@ -93,7 +92,7 @@ min-height:93.98vh;
     width: 100%;
     display: block;
     border-radius: var(--radius);
-    object-fit: cover;
+    object-fit: contain;
   }
   .gallery {
     margin-top: 1rem;

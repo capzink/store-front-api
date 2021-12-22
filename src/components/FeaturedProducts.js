@@ -6,11 +6,9 @@ import Product from "./Product";
 
 const FeaturedProducts = () => {
     const {products_error:error,featured_products:featured, products} = useProductsContext()
-  
     if(error){
         return <Error/>
     }
-
   return (
       <Wrapper>
           <div className="title">
@@ -29,7 +27,7 @@ const FeaturedProducts = () => {
 
 const Wrapper = styled.section`
   .featured {
-    margin: 4rem auto;
+    margin-bottom:5rem;
     display: grid;
     gap: 2.5rem;
     img {

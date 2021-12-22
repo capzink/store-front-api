@@ -7,7 +7,6 @@ const ProductList = () => {
 
   const { products } =
     useProductsContext();
-    console.log(products)
 
   return (
   <GridView products ={products}>productlist</GridView>)

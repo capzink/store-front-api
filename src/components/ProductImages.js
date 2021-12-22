@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import styled from "styled-components";
 
 const ProductImages = ({product}) => {
@@ -11,19 +11,7 @@ const ProductImages = ({product}) => {
 };
 
 const Wrapper = styled.section`
-  .main {
-    height: 300px;
-  }
-  img {
-    width: 100%;
-    display: block;
-    border-radius: var(--radius);
-    object-fit: contain;
-  }
 
-  .active {
-    box-shadow: 0px 0px 0px 2px var(--clr-primary-5);
-  }
   @media (max-width: 576px) {
     .main {
       height: 300px;

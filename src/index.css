@@ -11,12 +11,7 @@
   --clr-grey-3: hsl(209, 34%, 30%);
   --clr-grey-4: hsl(209, 28%, 39%);
   /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-6: hsl(209, 23%, 60%);
-  --clr-grey-7: hsl(211, 27%, 70%);
-  --clr-grey-8: hsl(210, 31%, 80%);
-  --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: hsl(210, 36%, 96%);
+
   --clr-white: #fff;
   --clr-black: #222;
   --transition: all 0.3s linear;
@@ -144,7 +139,27 @@ p {
   border-radius: var(--radius);
   border-color: transparent;
 }
+.btn-p {
+  text-transform: uppercase;
+  background: var(--clr-primary-5);
+  color: var(--clr-primary-10);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-weight: 400;
+  transition: var(--transition);
+  font-size: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  border-color: transparent;
+  margin-top:10px;
+}
 .btn:hover {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-7);
+}
+.btn-p:hover {
   color: var(--clr-primary-1);
   background: var(--clr-primary-7);
 }

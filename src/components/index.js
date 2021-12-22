@@ -18,5 +18,4 @@ export {
   ProductImages,
   ProductList,
   Counter,
-
 }

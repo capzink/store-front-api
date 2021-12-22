@@ -1,83 +1,62 @@
 import React from "react";
 import styled from "styled-components";
-import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Counter from './Counter'
 
 const Product = ({image, title, price, id}) => {
   return (
-    <Wrapper >
-      <div className="container">
+    <Wrapper>
+      <span>
+        <Counter />
+      </span>
+      <div className="featured ">
         <img src={image} alt={title} />
-        <Link to={`/products/${id}`} className="link">
-          <FaSearch />
-        </Link>
       </div>
       <footer>
         <h5>{title}</h5>
-        <p>${price}</p>
-        <span><Counter/></span>
+        <p>${price} USD</p>
+        <Link to={`/products/${id}`}>
+          <button className="btn-p">More Details</button>
+        </Link>
       </footer>
     </Wrapper>
   );
- 
 };
-
 const Wrapper = styled.article`
-    margin-top: 100px;
-   
-  .container {
-    position: relative;
-    background: transparent;
-    border-radius: var(--radius);
-  }
-  img {
-    width: 100%;
-    display: block;
-    object-fit: contain;
-    border-radius: var(--radius);
-    transition: var(--transition);
-  }
-  .link {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--clr-primary-5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    transition: var(--transition);
-    opacity: 0;
-    cursor: pointer;
-    svg {
-      font-size: 1.25rem;
-      color: var(--clr-white);
+  margin-top: 100px;
+
+  .featured {
+    margin-bottom: 5rem;
+    display: grid;
+    gap: 2.5rem;
+    img {
+      height: 220px;
+      width: 100%;
+      object-fit: contain;
+      border-radius: var(--radius);
+      transition: var(--transition);
     }
   }
-  .container:hover img {
-    opacity: 0.5;
-  }
-  .container:hover .link {
-    opacity: 1;
   }
   footer {
-    margin-top: 0.5rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+  }
+  footer h5 {
+    flex-shrink: 2;
   }
   footer h5,
   footer p {
     margin-bottom: 0;
-    font-weight: 400;
+    font-weight: 300;
+    font-size: 0.7rem;
   }
   footer p {
     color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
+    flex-shrink: 0;
   }
 `;
 export default Product;
