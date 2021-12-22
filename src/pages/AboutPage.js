@@ -9,16 +9,13 @@ const AboutPage = () => {
         <img src={aboutImg} alt="about" />
         <article>
           <div className="title">
-            <h2>Our Story</h2>
+            <h2>Carlos Andres Pinzon</h2>
             <div className="underline"></div>
           </div>
-          <p>
-            Over a decade ago, we started a store to sell snowboards online.
-            None of the ecommerce solutions at the time gave us the control we
-            needed to be successful—so we built our own. Today, businesses of
-            all sizes use Home Shopping, whether they’re selling online, in retail
-            stores, or on-the-go.
-          </p>
+          <p>Description: Working page with random API from fake store</p>
+          <p>Learn about: React redux, Styled components and History hook</p>
+          <p>Email: capz2003@gmail.com</p>
+          <a href="https://github.com/capzink">GitHub</a>
         </article>
       </Wrapper>
     </>
