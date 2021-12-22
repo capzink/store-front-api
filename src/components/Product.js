@@ -52,10 +52,12 @@ const Wrapper = styled.article`
   }
   footer h5 {
     flex-shrink: 2;
+    text-align:center
+    
   }
   footer h5,
   footer p {
-    margin-bottom: 0;
+    margin-bottom: 3px;
     font-weight: 300;
     font-size: 0.7rem;
   }
@@ -64,5 +66,11 @@ const Wrapper = styled.article`
     letter-spacing: var(--spacing);
     flex-shrink: 0;
   }
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 `;
 export default Product;

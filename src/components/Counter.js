@@ -37,7 +37,7 @@ const  Countdown =({status, setStatus}) => {
         {twoDigits(hoursToDisplay)}:{twoDigits(minutesToDisplay)}:
         {twoDigits(secondsToDisplay)}
       </span>
-      <button onClick={handleReset} type="button">
+      <button className="btn-reset" onClick={handleReset} type="button">
         Reset
       </button>
 
@@ -68,9 +68,19 @@ function useInterval(callback, delay) {
 const twoDigits = (num) => String(num).padStart(2, "0");
 
 const Wrapper = styled.section`
-display: flex;
-justify-content: space-around;
-margin-bottom:25px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
 
+  .btn-reset {
+    padding: 3px;
+    background: var(--clr-primary-5);
+    letter-spacing: var(--spacing);
+    display: inline-block;
+    font-weight: 400;
+    font-size: 0.2rem;
+    cursor: pointer;
+    border-radius: var(--radius);
+  }
 `;
 export default Countdown;
