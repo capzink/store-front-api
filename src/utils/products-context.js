@@ -41,10 +41,8 @@ const fetchSingleProduct = async(url) => {
   try {
     const resp = await axios.get(url);
     const singleProduct = resp.data;
-    
     dispatch({ type: "GET_SINGLE_PRODUCT_SUCCESS", payload: singleProduct })
-    console.log(singleProduct);
-
+    
   } catch (error) {
     dispatch({ type: "GET_SINGLE_PRODUCT_ERROR" });
   }

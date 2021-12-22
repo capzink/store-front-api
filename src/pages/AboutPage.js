@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import aboutImg from "../assets/about.jpeg";
+import carlos from "../assets/carlos.jpg";
 
 const AboutPage = () => {
   return (
     <>
       <Wrapper className="page section section-center">
-        <img src={aboutImg} alt="about" />
+        <img src={carlos} alt="about" />
         <article>
           <div className="title">
             <h2>Carlos Andres Pinzon</h2>
@@ -15,7 +15,9 @@ const AboutPage = () => {
           <p>Description: Working page with random API from fake store</p>
           <p>Learn about: React redux, Styled components and History hook</p>
           <p>Email: capz2003@gmail.com</p>
-          <a href="https://github.com/capzink">GitHub</a>
+          <p>
+            <a href="https://github.com/capzink">GitHub</a>
+          </p>
         </article>
       </Wrapper>
     </>

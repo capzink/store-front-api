@@ -5,13 +5,12 @@ import { useProductsContext } from "../utils/products-context";
 import { FaTimes } from "react-icons/fa";
 import { links } from "../utils/constants";
 import styled from "styled-components";
-import UserButton from "./UserButton";
+
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
   
- 
- 
+
   return (
     <SidebarContainer>
       <aside
@@ -34,7 +33,6 @@ const Sidebar = () => {
             );
           })}
         </ul>
-        <UserButton />
       </aside>
     </SidebarContainer>
   );
