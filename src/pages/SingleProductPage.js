@@ -43,7 +43,10 @@ const SingleProductPage = () => {
           <ProductImages/>
           <section className="content">
             <h2>{title}</h2>
-            
+            <Stars/>
+            <h5 className="price">${price}</h5>
+            <p className="description">{description}</p>
+            <p className="info">Product Id: {product_id}</p>
           </section>
         </div>
       </div>
