@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
 import about from "../assets/about.jpeg";
 import storeworker2 from "../assets/store-worker-2.jpg";
 
@@ -13,9 +13,6 @@ const Mainhome = () => {
           Make your <br />
           Wishes come true
         </h1>
-          <Link to="/products" className="btn hero-btn">
-            Shop now
-          </Link>
       </article>
       <article className="img-container">
         <img src={about} alt="store" className="main-img" />
@@ -26,7 +23,7 @@ const Mainhome = () => {
 };
 
 const Wrapper = styled.section`
-  min-height: 80vh;
+  min-height: 60vh;
   display: grid;
   place-items: center;
   .img-container {

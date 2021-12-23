@@ -5,7 +5,7 @@ import Error from "./Error";
 import Product from "./Product";
 
 const FeaturedProducts = () => {
-    const {products_error:error,featured_products:featured, products} = useProductsContext()
+    const {products_error:error,featured_products:featured} = useProductsContext()
     if(error){
         return <Error/>
     }
