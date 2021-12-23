@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useEffect, useReducer } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import reducer from "../reducers/products-reducer";
 import { products_url as url } from "../utils/constants";
 
@@ -10,7 +10,8 @@ const initialState = {
    products:[],
    featured_products:[],
    single_product_error:false,
-   single_product:{}
+   single_product:{},
+  
 
 };
 
@@ -42,14 +43,14 @@ const fetchSingleProduct = async(url) => {
     const resp = await axios.get(url);
     const singleProduct = resp.data;
     dispatch({ type: "GET_SINGLE_PRODUCT_SUCCESS", payload: singleProduct })
-    
   } catch (error) {
     dispatch({ type: "GET_SINGLE_PRODUCT_ERROR" });
   }
 };
-
 useEffect(()=>{
   fetchProducts(url)
+  
+  
 
 },[])
 

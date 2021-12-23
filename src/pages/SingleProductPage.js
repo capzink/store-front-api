@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useProductsContext } from "../utils/products-context";
 import { products_url as url } from "../utils/constants";
@@ -10,12 +10,14 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const SingleProductPage = () => {
+  const [loading, setLoading] = useState(false);
   const {id} = useParams()
   const history =useHistory()
   const {single_product_error:error, single_product : product, fetchSingleProduct } = useProductsContext()
- 
-  useEffect(()=>{
-    fetchSingleProduct(`${url}/${id}`);
+  const { id: product_id, title, price, description } = product;
+  useEffect(async ()=>{
+    await fetchSingleProduct(`${url}/${id}`);
+    setLoading(true);
    
 
   },[id])
@@ -30,7 +32,16 @@ const SingleProductPage = () => {
   if(error){
     return <Error/>
   }
-  const {id:product_id,image,title,price,rating,description}= product
+   if (!loading) {
+     return (
+       <>
+         <main className="loading">
+           <h2>Loading Product....</h2>
+         </main>
+       </>
+     );
+   }
+  
 
   return (
     <Wrapper>
@@ -53,8 +64,9 @@ const SingleProductPage = () => {
 };
 
 const Wrapper = styled.main`
-min-height:93.98vh;
-  
+  min-height: 93.98vh;
+
+
   .product-center {
     display: grid;
     gap: 4rem;
@@ -85,7 +97,7 @@ min-height:93.98vh;
       font-size: 1.25rem;
     }
   }
-    .main {
+  .main {
     height: 600px;
   }
   img {
@@ -127,7 +139,6 @@ min-height:93.98vh;
       }
     }
   }
-
 `;
 
 export default SingleProductPage;

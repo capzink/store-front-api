@@ -26,7 +26,7 @@ const Mainhome = () => {
 };
 
 const Wrapper = styled.section`
-  min-height: 60vh;
+  min-height: 80vh;
   display: grid;
   place-items: center;
   .img-container {

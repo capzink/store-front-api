@@ -181,4 +181,12 @@ p {
 .page {
   min-height: calc(100vh - (20vh + 10rem));
 }
+  .loading {
+    min-height: 93.98vh;
+    width: 90vw;
+    margin: 0 auto;
+    max-width: var(--max-width);
+    text-align: center;
+    margin-top: 15rem;
+  }
 
